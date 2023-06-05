@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+    
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <a href="/">Home</a>
+
+    <canvas id="canvas" height="200" style="background-color: #eee">Your Browser does not support Canvas, please upgrade</canvas>
+    <div id="controlButtons">
+        <div id="buttonUp" class="button"></div><!-- 
+         --><br>
+        <div id="buttonLeft" class="button"></div>
+        <div id="buttonBlank" class="button"></div>
+        <div id="buttonRight" class="button"></div><!-- 
+         --><br>
+        <div id="buttonDown" class="button"></div>
+    </div>
+    <div id="restartButton" class="button start">Start Game</div>
+    <div id="settingsButton" class="button">Settings</div>
+    <form id="settingsForm" class="hidden">
+        <label for="initialSpeed">Initial Speed (ms)</label>
+        <input type="number" id="initialSpeed" name="initialSpeed" value="150" min="30" max="999">
+        <br>
+        <label for="speedIncreaseStep">Speed Increase Step (ms)</label>
+        <input type="number" id="speedIncreaseStep" name="speedIncreaseStep" value="12" min="1" max="99">
+        <br>
+        <label for="applesToNextSpeed">Apples To Next Speed</label>
+        <input type="number" id="applesToNextSpeed" value="5" min="1" max="99">
+        <br>
+        <button id="saveSettingsButton" name="saveSettingsButton" class="button" type="submit">Save</button>
+    </form>
+
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <script src="snake.js"></script>
+</body>
+</html>
